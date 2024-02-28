@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 
 const EmployeeForm = () => {
@@ -31,6 +31,19 @@ const EmployeeForm = () => {
       {employeeIds.map((id, index) => (
         <div key={index}>
           <Controller
+            name={`employeeId${index}`}
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Employee ID"
+                variant="outlined"
+                fullWidth
+              />
+            )}
+          />
+          <Controller
             name={`employeeName${index}`}
             control={control}
             defaultValue=""
@@ -44,7 +57,34 @@ const EmployeeForm = () => {
               />
             )}
           />
-          {/* Similar fields for email and project group */}
+          <Controller
+            name={`employeeEmail${index}`} // Add this line for employee email
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Employee Email"
+                variant="outlined"
+                fullWidth
+                disabled
+              />
+            )}
+          />
+          <Controller
+            name={`employeeProjectGroup${index}`} // Add this line for project group
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Employee Project Group"
+                variant="outlined"
+                fullWidth
+                disabled
+              />
+            )}
+          />
           <Button
             variant="contained"
             color="primary"
