@@ -1,0 +1,45 @@
+function UserHandler(Id) {
+  return new Promise((resolve, reject) => {
+    fetch(`https://dummyjson.com/todos/${Id}`)
+      .then(res => res.json())
+      .then(resp => {
+        /*   console.log(resp); */ // Log the response value
+        resolve(resp); // Resolve the promise with the response value
+      })
+      .catch(error => {
+        /*  console.error('Error fetching data:', error); */
+        reject(error); // Reject the promise with the error
+      });
+  });
+}
+
+function validateUser(field, empId) {
+  const Username = field
+  switch (Username) {
+    case "leader":
+      console.log(field)
+      UserHandler(empId)
+    case "member":
+      console.log(field)
+      UserHandler(empId)
+        .then(data => {
+          console.log('Received data:', data);
+          // Use the data as needed
+        })
+        .catch(err => {
+          console.error('Error:', err);
+          // Handle the error
+        });
+  }
+}
+
+
+<button onclick="validateUser('leader',2)">
+  Click
+</button>
+<button onclick="validateUser('member',1)">
+  Click Member
+</button>
+
+
+
