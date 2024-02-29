@@ -1,0 +1,18 @@
+.bg-Img {
+  background-image: url("../images/Designer.png");
+  background-size: auto;
+  background-repeat: repeat;
+  height: 100%;
+}
+.verify-Form {
+  margin: 0;
+  display: flex;
+  padding: auto;
+}
+/* *{
+  overflow-x: hidden;
+} */
+
+.loginForm {
+  overflow: hidden;
+}

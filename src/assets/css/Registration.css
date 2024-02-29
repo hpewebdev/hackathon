@@ -1,0 +1,12 @@
+.regist-bgImg {
+  background-image: url("../images/Designer.png");
+  background-size: auto;
+  background-repeat: repeat;
+  height: 100%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
